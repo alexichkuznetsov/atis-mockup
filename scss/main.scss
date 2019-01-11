@@ -1,4 +1,239 @@
-// Imports
-@import 'base';
+/*
+    Imports and components
+*/
+@import 'variables';
+@import 'mixins';
 @import 'fonts';
+@import 'base';
 
+/*
+    Components
+*/
+
+// Header
+.main-header {
+	&__container {
+		position: relative;
+		z-index: 1;
+
+		max-width: 160rem;
+		margin: 0 auto;
+		margin-top: 6rem;
+		padding: 1rem 0;
+
+		@include clearfix;
+	}
+
+	&__logo:link,
+	&__logo:visited {
+		display: block;
+
+		font-family: 'Molle';
+		font-size: 3rem;
+		color: $color-primary;
+		text-decoration: none;
+
+		float: left;
+		margin-top: 1rem;
+	}
+
+	&__nav {
+		float: right;
+		@include clearfix;
+
+		&-list {
+			float: left;
+			margin-right: 4rem;
+
+			list-style: none;
+		}
+
+		&-item {
+			display: inline-block;
+			margin-top: 1.6rem;
+
+			&:not(:last-child) {
+				margin-right: 4rem;
+			}
+		}
+
+		&-link:link,
+		&-link:visited {
+			text-decoration: none;
+			font-size: 1.6rem;
+			color: $color-font-primary;
+		}
+	}
+
+	&__btn-box {
+		float: left;
+	}
+
+	&__hero {
+		position: relative;
+		height: 780px;
+
+		background-image: url('../img/hero.png'),
+			linear-gradient($color-white, $color-white);
+		background-size: cover;
+		background-position: center;
+	}
+
+	&__heading-box {
+		@include absoluteCenter;
+		top: 40%;
+	}
+
+	&__heading {
+		color: $color-primary;
+		text-align: center;
+		margin-bottom: 5rem;
+
+		&--top {
+			display: block;
+
+			font-family: 'Molle';
+			font-size: 14rem;
+			letter-spacing: 5px;
+		}
+
+		&--sub {
+			display: block;
+
+			font-size: 1.6rem;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+		}
+	}
+
+	&__heading-btn {
+		text-align: center;
+	}
+}
+
+// Button
+.btn {
+	&:link,
+	&:visited {
+		display: inline-block;
+
+		text-decoration: none;
+		color: $color-primary;
+		font-size: 1.6rem;
+
+		padding: 1.6rem 4.5rem;
+		border-radius: 100px;
+		background-color: $color-white;
+		box-shadow: 0 0 6rem rgba($color-primary, 0.3);
+	}
+
+	&--wide:link,
+	&--wide:visited {
+		padding: 1.6rem 5.5rem;
+	}
+}
+
+// Section - Search form
+.section-form {
+	padding: 5.5rem 0;
+	background-color: $color-primary;
+}
+
+// Form
+.form {
+	@include clearfix;
+
+	max-width: 160rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+
+	&__group {
+		float: left;
+		position: relative;
+
+		&:not(&--stars) {
+			margin-right: 3rem;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: 1.4rem;
+			height: 2rem;
+
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			position: absolute;
+			top: 50%;
+			left: 3px;
+			transform: translateY(-50%);
+		}
+
+		&--city::before {
+			background-image: url('../img/icons/location-pin.png');
+		}
+
+		&--check-in::before,
+		&--check-out::before {
+			background-image: url('../img/icons/date-picker.png');
+		}
+
+		&--rooms::before {
+			background-image: url('../img/icons/home.png');
+		}
+
+		&--adults::before {
+			background-image: url('../img/icons/person.png');
+		}
+
+		&--child::before {
+			background-image: url('../img/icons/face.png');
+		}
+
+		&--stars::before {
+			background-image: url('../img/icons/star.png');
+		}
+	}
+
+	&__input {
+		font-family: inherit;
+		color: $color-white;
+
+		padding: 1.8rem 3rem;
+		background-color: transparent;
+		border: none;
+		border-bottom: 1px solid $color-primary-light;
+
+		&::placeholder {
+			color: $color-white;
+		}
+
+		&--city {
+			width: 30rem;
+		}
+
+		&:not(&--city) {
+			width: 17rem;
+		}
+	}
+
+	&__btn-box {
+		float: left;
+		margin-left: 2.2rem;
+	}
+
+	&__btn {
+		display: inline-block;
+		width: 4.8rem;
+		height: 4.8rem;
+
+		background-image: url('../img/icons/search.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: $color-white;
+		border-radius: 50%;
+		border: none;
+	}
+}
