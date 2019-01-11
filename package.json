@@ -1,0 +1,14 @@
+{
+  "name": "atis",
+  "version": "1.0.0",
+  "description": "Landing page for Atis template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node-sass scss/main.scss assets/css/main.css -w"
+  },
+  "author": "Aleksey",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

@@ -1,0 +1,30 @@
+/*
+    Global reset
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  font-weight: 400; }
+
+body {
+  box-sizing: border-box; }
+
+/*
+    Custom fonts
+    definitions
+*/
+@font-face {
+  font-family: 'Streetwear';
+  src: local("Streetwear"), url("../fonts/Streetwear.otf") format("opentype");
+  font-weight: 400; }
+
+body {
+  font-family: 'Streetwear'; }
