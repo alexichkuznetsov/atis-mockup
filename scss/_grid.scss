@@ -1,0 +1,33 @@
+/*
+    File to hold grid system
+*/
+
+.row {
+	@include clearfix;
+
+	&:not(:last-child) {
+		margin-bottom: $row-gap;
+	}
+
+	[class^='col-'] {
+		float: left;
+
+		&:not(:last-child) {
+			margin-right: $col-gap;
+		}
+	}
+
+	// 4 Columns
+	.col-1-of-4 {
+		width: calc((100% - 3 * #{$col-gap}) / 4);
+	}
+
+	.col-2-of-4 {
+		width: calc(2 * ((100% - 3 * #{$col-gap}) / 4) + #{$col-gap});
+	}
+
+	// 2 Columns
+	.col-1-of-2 {
+		width: calc((100% - #{$col-gap}) / 2);
+	}
+}

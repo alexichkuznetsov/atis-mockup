@@ -3,6 +3,7 @@
 */
 @import 'variables';
 @import 'mixins';
+@import 'grid';
 @import 'fonts';
 @import 'base';
 
@@ -18,7 +19,7 @@
 
 		max-width: 160rem;
 		margin: 0 auto;
-		margin-top: 6rem;
+		margin-top: 3rem;
 		padding: 1rem 0;
 
 		@include clearfix;
@@ -111,7 +112,7 @@
 	}
 }
 
-// Button
+// Buttons
 .btn {
 	&:link,
 	&:visited {
@@ -131,6 +132,18 @@
 	&--wide:visited {
 		padding: 1.6rem 5.5rem;
 	}
+}
+
+.btn-secondary:link,
+.btn-secondary:visited {
+	display: inline-block;
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: $color-white;
+	text-decoration: none;
+	border: 2px solid $color-primary-light-2;
+	border-radius: 100px;
+	padding: 1rem 2rem;
 }
 
 // Section - Search form
@@ -205,6 +218,7 @@
 		background-color: transparent;
 		border: none;
 		border-bottom: 1px solid $color-primary-light;
+		cursor: pointer;
 
 		&::placeholder {
 			color: $color-white;
@@ -235,5 +249,72 @@
 		background-color: $color-white;
 		border-radius: 50%;
 		border: none;
+		cursor: pointer;
+	}
+}
+
+// Section - Popular places
+.section-heading {
+	font-size: 1.6rem;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 7.6rem 0;
+}
+
+.place {
+	position: relative;
+	height: 270px;
+
+	&--wide {
+		height: 460px;
+	}
+
+	&:first-child:not(&--wide) {
+		margin-bottom: $row-gap;
+	}
+
+	&__photo {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__title {
+		font-size: 3rem;
+		font-weight: 700;
+		color: $color-white;
+
+		position: absolute;
+		bottom: 2rem;
+		left: 3rem;
+	}
+}
+
+.place-central {
+	position: relative;
+	height: 570px;
+
+	&__photo {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__title {
+		font-size: 3rem;
+		font-weight: 700;
+		color: $color-white;
+		margin-bottom: 2rem;
+	}
+
+	&__container {
+		@include absoluteCenter;
+
+		text-align: center;
+	}
+
+	&__btn-box {
+		.btn-secondary:not(:last-child) {
+			margin-right: 2rem;
+		}
 	}
 }
