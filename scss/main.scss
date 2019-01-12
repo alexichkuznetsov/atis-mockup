@@ -3,6 +3,7 @@
 */
 @import 'variables';
 @import 'mixins';
+@import 'utilities';
 @import 'grid';
 @import 'fonts';
 @import 'base';
@@ -144,6 +145,14 @@
 	border: 2px solid $color-primary-light-2;
 	border-radius: 100px;
 	padding: 1rem 2rem;
+}
+
+.btn-secondary--grey:link,
+.btn-secondary--grey:visited {
+	color: $color-grey-light;
+	border: 2px solid $color-grey-light;
+	font-size: 1.6rem;
+	padding: 1.6rem 4rem;
 }
 
 // Section - Search form
@@ -316,5 +325,96 @@
 		.btn-secondary:not(:last-child) {
 			margin-right: 2rem;
 		}
+	}
+}
+
+// Section - hotels
+.section-hotels {
+	background-color: $color-grey;
+
+	&__btn-container {
+		padding: 5rem 0;
+		text-align: center;
+	}
+}
+
+.hotels-list {
+	max-width: 160rem;
+	padding: 0 1.5rem;
+	margin: 0 auto;
+}
+
+.hotel {
+	position: relative;
+	background-color: $color-white;
+	box-shadow: 0 2rem 4rem rgba($color-black, 0.1);
+
+	&__photo-container {
+		width: 37rem;
+		height: 30rem;
+	}
+
+	&__photo {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__info {
+		@include clearfix;
+		padding: 3rem 3rem 5rem 3rem;
+	}
+
+	&__info-container {
+		float: left;
+	}
+
+	&__price-container {
+		float: right;
+		text-align: center;
+	}
+
+	&__name {
+		font-size: 1.8rem;
+		color: $color-font-primary;
+		margin-bottom: 1.2rem;
+	}
+
+	&__icon {
+		display: inline-block;
+		margin-right: 3px;
+
+		width: 1.6rem;
+		height: 1.6rem;
+
+		background-image: url('../img/icons/star-yellow.png');
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	&__price {
+		font-size: 3.6rem;
+		font-weight: 100;
+	}
+
+	&__days {
+		font-size: 1.4rem;
+		color: $color-grey-light-2;
+	}
+
+	&__btn {
+		display: inline-block;
+		color: $color-primary;
+		font-size: 1.6rem;
+		text-decoration: none;
+		padding: 1.6rem 5rem;
+		background-color: $color-white;
+		border-radius: 100px;
+		box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
 	}
 }

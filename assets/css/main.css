@@ -9,9 +9,15 @@
     File to hold mixins
 */
 /*
+    File to hold utility classes
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700");
+.u-mb-md {
+  margin-bottom: 6rem !important; }
+
+/*
     File to hold grid system
 */
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 .row::after {
   content: '';
   display: table;
@@ -171,6 +177,13 @@ body {
   border-radius: 100px;
   padding: 1rem 2rem; }
 
+.btn-secondary--grey:link,
+.btn-secondary--grey:visited {
+  color: #c5c5c5;
+  border: 2px solid #c5c5c5;
+  font-size: 1.6rem;
+  padding: 1.6rem 4rem; }
+
 .section-form {
   padding: 5.5rem 0;
   background-color: #017dfb; }
@@ -285,3 +298,68 @@ body {
     text-align: center; }
   .place-central__btn-box .btn-secondary:not(:last-child) {
     margin-right: 2rem; }
+
+.section-hotels {
+  background-color: #f9f9f9; }
+  .section-hotels__btn-container {
+    padding: 5rem 0;
+    text-align: center; }
+
+.hotels-list {
+  max-width: 160rem;
+  padding: 0 1.5rem;
+  margin: 0 auto; }
+
+.hotel {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1); }
+  .hotel__photo-container {
+    width: 37rem;
+    height: 30rem; }
+  .hotel__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .hotel__info {
+    padding: 3rem 3rem 5rem 3rem; }
+    .hotel__info::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .hotel__info-container {
+    float: left; }
+  .hotel__price-container {
+    float: right;
+    text-align: center; }
+  .hotel__name {
+    font-size: 1.8rem;
+    color: #697899;
+    margin-bottom: 1.2rem; }
+  .hotel__icon {
+    display: inline-block;
+    margin-right: 3px;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url("../img/icons/star-yellow.png");
+    background-repeat: no-repeat;
+    background-position: center; }
+  .hotel__price {
+    font-size: 3.6rem;
+    font-weight: 100; }
+  .hotel__days {
+    font-size: 1.4rem;
+    color: #d9dce3; }
+  .hotel__btn {
+    display: inline-block;
+    color: #017dfb;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 1.6rem 5rem;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%); }
