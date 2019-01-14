@@ -1,15 +1,15 @@
 // Buttons
-let prevBtn = document.querySelector('#prev-button');
-let nextBtn = document.querySelector('#next-button');
+var prevBtn = document.querySelector('#prev-button');
+var nextBtn = document.querySelector('#next-button');
 
 // Slides
-let slides = document.querySelectorAll('.slide');
+var slides = document.querySelectorAll('.slide');
 
 // Dots
-let dots = document.querySelectorAll('.slider__dot');
+var dots = document.querySelectorAll('.slider__dot');
 
 // Container
-let slidesContainer = document.querySelector('.slider__slides-container');
+var slidesContainer = document.querySelector('.slider__slides-container');
 
 function Slider(prev, next, slides, dots, container) {
 	this.prevBtn = prev;
@@ -21,7 +21,7 @@ function Slider(prev, next, slides, dots, container) {
 	this.currentSlideIdx = 0;
 
 	// Set corresponding 'left' property for each slide
-	let self = this;
+	var self = this;
 	this.slides.forEach(function(slide, i) {
 		slide.style.left = (self.containerWidth * i).toString() + 'px';
 	});
@@ -30,7 +30,7 @@ function Slider(prev, next, slides, dots, container) {
 Slider.prototype.setButtonsEvents = function() {
 	this.prevBtn.addEventListener('click', e => {
 		if (this.currentSlideIdx > 0) {
-			let next = this.currentSlideIdx - 1;
+			var next = this.currentSlideIdx - 1;
 			this.changeSlide(next);
 			this.changeDot(next);
 			this.currentSlideIdx = next;
@@ -39,7 +39,7 @@ Slider.prototype.setButtonsEvents = function() {
 
 	this.nextBtn.addEventListener('click', e => {
 		if (this.currentSlideIdx < this.slides.length - 1) {
-			let nextSlideIdx = this.currentSlideIdx + 1;
+			var nextSlideIdx = this.currentSlideIdx + 1;
 			this.changeSlide(nextSlideIdx);
 			this.changeDot(nextSlideIdx);
 			this.currentSlideIdx = nextSlideIdx;
@@ -57,8 +57,8 @@ Slider.prototype.changeDot = function(next) {
 };
 
 Slider.prototype.changeSlide = function(next) {
-	for (let i = 0; i < this.slides.length; i++) {
-		let diff = i - next,
+	for (var i = 0; i < this.slides.length; i++) {
+		var diff = i - next,
 			slide = this.slides[i];
 
 		if (i === next) {
@@ -75,5 +75,5 @@ Slider.prototype.init = function() {
 	this.setButtonsEvents();
 };
 
-let s = new Slider(prevBtn, nextBtn, slides, dots, slidesContainer);
+var s = new Slider(prevBtn, nextBtn, slides, dots, slidesContainer);
 s.init();

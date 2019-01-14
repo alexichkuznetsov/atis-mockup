@@ -1,14 +1,19 @@
 {
-  "name": "atis",
-  "version": "1.0.0",
-  "description": "Landing page for Atis template",
-  "main": "index.js",
-  "scripts": {
-    "dev": "node-sass scss/main.scss assets/css/main.css -w"
-  },
-  "author": "Aleksey",
-  "license": "ISC",
-  "devDependencies": {
-    "node-sass": "^4.11.0"
-  }
+	"name": "atis",
+	"version": "1.0.0",
+	"description": "Landing page for Atis template",
+	"main": "index.js",
+	"scripts": {
+		"dev": "node-sass scss/main.scss assets/css/main.css -w"
+	},
+	"author": "Aleksey",
+	"license": "ISC",
+	"devDependencies": {
+		"gulp": "^4.0.0",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-clean-css": "^4.0.0",
+		"gulp-rename": "^1.4.0",
+		"gulp-sass": "^4.0.2",
+		"node-sass": "^4.11.0"
+	}
 }
