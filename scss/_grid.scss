@@ -30,4 +30,24 @@
 	.col-1-of-2 {
 		width: calc((100% - #{$col-gap}) / 2);
 	}
+
+	@include media(1200px) {
+		[class^='col-'] {
+			float: none;
+
+			width: 80%;
+			margin: 0 auto;
+
+			&:not(:last-child) {
+				margin: 0 auto;
+				margin-bottom: $col-gap;
+			}
+		}
+	}
+
+	@include media(800px) {
+		[class^='col-'] {
+			width: 90%;
+		}
+	}
 }
