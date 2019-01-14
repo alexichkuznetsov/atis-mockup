@@ -29,11 +29,12 @@
 	&__checkbox:checked ~ &__menu-btn {
 		&::before {
 			transform: rotate(45deg);
+			top: 2.5rem;
 		}
 
 		&::after {
 			transform: rotate(-45deg);
-			top: 2rem;
+			top: 2.5rem;
 		}
 	}
 
@@ -43,7 +44,7 @@
 		height: 5rem;
 
 		position: absolute;
-		top: -1rem;
+		top: 0;
 		right: 2rem;
 
 		@include media(900px) {
@@ -91,13 +92,13 @@
 
 		@include media(900px) {
 			padding: 0;
+			text-align: center;
 		}
 	}
 
 	&__logo:link,
 	&__logo:visited {
-		display: block;
-
+		display: inline-block;
 		font-family: 'Molle';
 		font-size: 3rem;
 		color: $color-primary;
@@ -112,9 +113,7 @@
 		}
 
 		@include media(900px) {
-			display: block;
 			float: none;
-			text-align: center;
 		}
 	}
 
@@ -179,6 +178,10 @@
 			&:hover {
 				transform: translateY(-2px);
 				color: darken($color-font-primary, 15%);
+			}
+
+			@include media(900px) {
+				font-size: 1.8rem;
 			}
 		}
 	}
@@ -569,7 +572,7 @@
 			margin-right: 2rem;
 		}
 
-		@include media(400px) {
+		@include media(450px) {
 			.btn-secondary {
 				display: block;
 				width: 80%;
